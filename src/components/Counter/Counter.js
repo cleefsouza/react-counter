@@ -12,11 +12,11 @@ export default class Counter extends Component {
         };
     }
 
-    handleButtonClick = (tipoClick) => {
+    handleButtonClick = (value) => {
         const { contadorAtual, cliques } = this.state;
 
         this.setState({
-            contadorAtual: tipoClick ? contadorAtual + 1 : contadorAtual - 1,
+            contadorAtual: value ? contadorAtual + 1 : contadorAtual - 1,
             cliques: cliques + 1,
         });
     };
@@ -26,9 +26,9 @@ export default class Counter extends Component {
 
         return (
             <div className={css.counterContainer}>
-                <Button click={this.handleButtonClick} tipo={false}></Button>
+                <Button click={this.handleButtonClick} value={false}></Button>
                 <span className={css.counterValue}>{contadorAtual}</span>
-                <Button click={this.handleButtonClick} tipo={true}></Button>
+                <Button click={this.handleButtonClick} value={true}></Button>
                 <p className={css.counterValue}>Cliques: {cliques}</p>
             </div>
         );
